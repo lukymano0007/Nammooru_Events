@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namma Ooru Events — Premium Event Organizer</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header" id="header">
+        <a href="#home" class="logo-container">
+            <img src="images/logo.png" alt="Logo" class="logo-img">
+            <span class="logo-text">NAMMA_OORU<span>_EVENTS</span></span>
+        </a>
+
+        <nav class="nav" id="navbar">
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <button class="menu-btn" id="menuBtn">☰</button>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+    <section id="home" class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="videos/bg4.mp4" type="video/mp4">
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1 class="title">We Create <span>Premium Events</span></h1>
+            <p class="subtitle">Turning ideas into unforgettable moments.</p>
+            <button class="hero-btn" onclick="scrollToSection('services')">Get Started</button>
+        </div>
+    </section>
+
+
+    <!-- ================= SERVICES ================= -->
+    <section id="services" class="section">
+        <h2 class="section-title">Our Premium Services</h2>
+
+        <div class="services-grid">
+            <div class="service-card" onclick="openService('wedding')">Wedding Planning</div>
+            <div class="service-card" onclick="openService('corporate')">Corporate Events</div>
+            <div class="service-card" onclick="openService('birthday')">Birthday Parties</div>
+            <div class="service-card" onclick="openService('stage')">LED Wall & Stage Setup</div>
+            <div class="service-card" onclick="openService('dj')">DJ & Music Systems</div>
+            <div class="service-card" onclick="openService('photo')">Photography & Videography</div>
+            <div class="service-card" onclick="openService('catering')">Catering & Decoration</div>
+            <div class="service-card" onclick="openService('culture')">Cultural Shows & Performers</div>
+        </div>
+    </section>
+
+
+    <!-- ================= WEDDING ================= -->
+    <section id="service-wedding" class="service-detail">
+        <button class="close-btn" onclick="closeService()">✖</button>
+        <h2>Wedding Planning</h2>
+
+        <video id="main-video-wedding" class="service-video" controls autoplay playsinline>
+            <source src="videos/wd1 (1).mp4" type="video/mp4">
+        </video>
+
+        <div class="video-library">
+            <video onclick="switchVideo('wedding','videos/wd1_1.mp4')" src="videos/wd1_1.mp4"></video>
+            <video onclick="switchVideo('wedding','videos/wd1_2.mp4')" src="videos/wd1_2.mp4"></video>
+            <video onclick="switchVideo('wedding','videos/wd1_3.mp4')" src="videos/wd1_3.mp4"></video>
+            <video onclick="switchVideo('wedding','videos/wed4.mp4')" src="videos/wed4.mp4"></video>
+            <video onclick="switchVideo('wedding','videos/wed5.mp4')" src="videos/wed5.mp4"></video>
+        </div>
+
+        <p>We create luxurious weddings with lighting, catering, photography, and decoration.</p>
+
+        <div class="detail-gallery">
+            <img src="images/wed1.jpg" alt="">
+            <img src="images/wed2.jpg" alt="">
+            <img src="images/wed3.jpg" alt="">
+        </div>
+    </section>
+
+
+    <!-- ================= CORPORATE ================= -->
+    <section id="service-corporate" class="service-detail">
+        <button class="close-btn" onclick="closeService()">✖</button>
+        <h2>Corporate Events</h2>
+
+        <video id="main-video-corporate" class="service-video" controls autoplay>
+            <source src="videos/corp1.mp4" type="video/mp4">
+        </video>
+
+        <div class="video-library">
+            <video onclick="switchVideo('corporate','videos/corp1.mp4')" src="videos/corp1.mp4"></video>
+            <video onclick="switchVideo('corporate','videos/corp2.mp4')" src="videos/corp2.mp4"></video>
+            <video onclick="switchVideo('corporate','videos/corp3.mp4')" src="videos/corp3.mp4"></video>
+        </div>
+
+        <p>Professional event setups for conferences, seminars, and brand launches.</p>
+    </section>
+
+
+    <!-- ================= BIRTHDAY ================= -->
+    <section id="service-birthday" class="service-detail">
+        <button class="close-btn" onclick="closeService()">✖</button>
+        <h2>Birthday Parties</h2>
+
+        <video id="main-video-birthday" class="service-video" controls autoplay>
+            <source src="videos/bday1.mp4" type="video/mp4">
+        </video>
+
+        <div class="video-library">
+            <video onclick="switchVideo('birthday','videos/bday1.mp4')" src="videos/bday1.mp4"></video>
+            <video onclick="switchVideo('birthday','videos/bday2.mp4')" src="videos/bday2.mp4"></video>
+            <video onclick="switchVideo('birthday','videos/bday3.mp4')" src="videos/bday3.mp4"></video>
+        </div>
+
+        <p>We create beautiful birthday themes, decoration, cake table, balloons & lighting.</p>
+    </section>
+
+
+    <!-- ================= STAGE ================= -->
+    <section id="service-stage" class="service-detail">
+        <button class="close-btn" onclick="closeService()">✖</button>
+        <h2>LED Wall & Stage</h2>
+
+        <video id="main-video-stage" class="service-video" controls autoplay>
+            <source src="videos/stage1.mp4" type="video/mp4">
+        </video>
+
+        <div class="video-library">
+            <video onclick="switchVideo('stage','videos/stage1.mp4')" src="videos/stage1.mp4"></video>
+            <video onclick="switchVideo('stage','videos/stage2.mp4')" src="videos/stage2.mp4"></video>
+            <video onclick="switchVideo('stage','videos/stage3.mp4')" src="videos/stage3.mp4"></video>
+        </div>
+
+        <p>High-quality LED walls, truss lighting, and sound systems.</p>
+    </section>
+
+
+    <!-- ================= DJ ================= -->
+    <section id="service-dj" class="service-detail">
+        <button class="close-btn" onclick="closeService()">✖</button>
+        <h2>DJ & Music</h2>
+
+        <video id="main-video-dj" class="service-video" controls autoplay>
+            <source src="videos/dj1.mp4" type="video/mp4">
+        </video>
+
+        <div class="video-library">
+            <video onclick="switchVideo('dj','videos/dj1.mp4')" src="videos/dj1.mp4"></video>
+            <video onclick="switchVideo('dj','videos/dj2.mp4')" src="videos/dj2.mp4"></video>
+        </div>
+
+        <p>Top-class DJs with bass speakers, smoke effects & lighting.</p>
+    </section>
+
+
+    <!-- ================= PHOTOGRAPHY ================= -->
+    <section id="service-photo" class="service-detail">
+        <button class="close-btn" onclick="closeService()">✖</button>
+        <h2>Photography & Videography</h2>
+
+        <video id="main-video-photo" class="service-video" controls autoplay>
+            <source src="videos/photo1.mp4" type="video/mp4">
+        </video>
+
+        <div class="video-library">
+            <video onclick="switchVideo('photo','videos/photo1.mp4')" src="videos/photo1.mp4"></video>
+            <video onclick="switchVideo('photo','videos/photo2.mp4')" src="videos/photo2.mp4"></video>
+        </div>
+
+        <p>Premium cinematic shoots & drone coverage.</p>
+    </section>
+
+
+    <!-- ================= CATERING ================= -->
+    <section id="service-catering" class="service-detail">
+        <button class="close-btn" onclick="closeService()">✖</button>
+        <h2>Catering & Decoration</h2>
+
+        <video id="main-video-catering" class="service-video" controls autoplay>
+            <source src="videos/cat1.mp4" type="video/mp4">
+        </video>
+
+        <div class="video-library">
+            <video onclick="switchVideo('catering','videos/cat1.mp4')" src="videos/cat1.mp4"></video>
+            <video onclick="switchVideo('catering','videos/cat2.mp4')" src="videos/cat2.mp4"></video>
+        </div>
+
+        <p>Delicious food & complete décor solutions.</p>
+    </section>
+
+
+    <!-- ================= CULTURAL SHOWS ================= -->
+    <section id="service-culture" class="service-detail">
+        <button class="close-btn" onclick="closeService()">✖</button>
+        <h2>Cultural Performers</h2>
+
+        <video id="main-video-culture" class="service-video" controls autoplay>
+            <source src="videos/cult1.mp4" type="video/mp4">
+        </video>
+
+        <div class="video-library">
+            <video onclick="switchVideo('culture','videos/cult1.mp4')" src="videos/cult1.mp4"></video>
+            <video onclick="switchVideo('culture','videos/cult2.mp4')" src="videos/cult2.mp4"></video>
+        </div>
+
+        <p>Traditional and modern performance artists.</p>
+    </section>
+
+
+
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="section about">
+        <h2 class="section-title">About Us</h2>
+        <p>Namma Ooru Events delivers high–quality premium functions blending creativity,
+            lighting, technology, and professional execution.</p>
+    </section>
+
+
+
+    <!-- ================= CONTACT (Swipe Layout) ================= -->
+    <section class="contact-modern" id="contact">
+
+        <!-- LEFT IMAGE PART -->
+        <div class="contact-left">
+            <img src="images/download (18).jpg" alt="Contact Us">
+
+            <div class="contact-overlay">
+                <h2>Namma Ooru Events</h2>
+                <p>Premium event planning & decoration services.</p>
+
+                <p>Email: <a href="mailto:info@nammaooruevents.com">info@nammaooruevents.com</a></p>
+                <p>Phone: <a href="tel:+919876543210">+91 9790605645, +91 9092238162</a></p>
+
+                <div class="left-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- RIGHT FORM PART -->
+        <div class="contact-right">
+            <div class="form-card">
+
+                <div class="tabs">
+                    <button class="tab active" id="tabContact">Contact</button>
+                    <button class="tab" id="tabOrder">Order</button>
+                </div>
+
+                <!-- CONTACT FORM -->
+                <form class="form-section active" id="contactForm">
+                    <h3>Send us a Message</h3>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message"></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+
+                <!-- ORDER FORM -->
+                <form class="form-section" id="orderForm">
+                    <h3>Book an Event</h3>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" placeholder="Phone Number" required>
+                    <input type="text" placeholder="Event Type" required>
+                    <textarea placeholder="Event Details"></textarea>
+                    <button type="submit">Get a Solution</button>
+                </form>
+
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        © 2025 Namma Ooru Events — All Rights Reserved
+    </footer>
+
+
+
+    <!-- ================= JS ================= -->
+    <script src="script.js"></script>
+
+    <script>
+        /* Navigation Toggle */
+        const menuBtn = document.getElementById("menuBtn");
+        const navbar = document.getElementById("navbar");
+
+        menuBtn.onclick = () => {
+            navbar.classList.toggle("active");
+        };
+
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+        }
+
+
+        /* Contact Tabs */
+        const tabContact = document.getElementById("tabContact");
+        const tabOrder = document.getElementById("tabOrder");
+        const contactForm = document.getElementById("contactForm");
+        const orderForm = document.getElementById("orderForm");
+
+        tabOrder.onclick = () => {
+            tabOrder.classList.add("active");
+            tabContact.classList.remove("active");
+            orderForm.classList.add("active");
+            contactForm.classList.remove("active");
+        };
+
+        tabContact.onclick = () => {
+            tabContact.classList.add("active");
+            tabOrder.classList.remove("active");
+            contactForm.classList.add("active");
+            orderForm.classList.remove("active");
+        };
+
+
+        /* Service Modal Logic */
+        function openService(service) {
+            document.getElementById(`service-${service}`).classList.add("show");
+        }
+
+        function closeService() {
+            document.querySelectorAll(".service-detail").forEach(s => s.classList.remove("show"));
+        }
+
+        function switchVideo(service, src) {
+            const video = document.getElementById(`main-video-${service}`);
+            video.src = src;
+            video.play();
+        }
+    </script>
+
+</body>
+
+</html>
