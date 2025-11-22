@@ -15,7 +15,7 @@ if (menuBtn && navbar) {
     });
 }
 
-/* Close menu when clicking outside (mobile only) */
+/* Close menu when clicking outside */
 window.addEventListener("click", (e) => {
     if (navbar && menuBtn) {
         if (!navbar.contains(e.target) && e.target !== menuBtn) {
@@ -45,7 +45,7 @@ let activeService = null;
 
 /* ---------- OPEN SERVICE PAGE ---------- */
 function openService(serviceId) {
-    closeService(); // Close previous
+    closeService();
 
     const section = document.getElementById(`service-${serviceId}`);
     if (!section) return;
@@ -53,7 +53,6 @@ function openService(serviceId) {
     section.classList.add("active");
     activeService = section;
 
-    // Scroll into view
     window.scrollTo({
         top: section.offsetTop - 40,
         behavior: "smooth",
@@ -77,7 +76,6 @@ function closeService() {
 
     const videos = activeService.querySelectorAll("video");
 
-    // Pause and reset every video
     videos.forEach((v) => {
         v.pause();
         v.currentTime = 0;
@@ -102,28 +100,58 @@ function switchVideo(serviceId, videoFile) {
 }
 
 /* ============================================================
-   4. VIDEO RESPONSIVE FIX — Prevent overflow stretching
+   4. VIDEO RESPONSIVE FIX
 ============================================================ */
-document.querySelectorAll(".service-video").forEach(video => {
+document.querySelectorAll(".service-video").forEach((video) => {
     video.style.width = "100%";
     video.style.height = "auto";
 });
 
 /* ============================================================
-   5. CONTACT FORM VALIDATION (Optional Enhancement)
+   5. CONTACT SECTION — TAB SYSTEM + ANIMATION
 ============================================================ */
-const contactForm = document.querySelector(".contact-form");
 
-if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
-        const name = contactForm.querySelector("[name='name']").value.trim();
-        const email = contactForm.querySelector("[name='email']").value.trim();
-        const phone = contactForm.querySelector("[name='phone']").value.trim();
-        const message = contactForm.querySelector("[name='message']").value.trim();
+const contactContainer = document.querySelector(".contact-container");
+const contactTab = document.querySelector("#contactTab");
+const orderTab = document.querySelector("#orderTab");
 
-        if (!name || !email || !phone || !message) {
-            alert("Please fill out all fields.");
-            e.preventDefault();
-        }
+const contactForm = document.querySelector("#contactForm");
+const orderForm = document.querySelector("#orderForm");
+
+const contactBox = document.querySelector("#contactBox");
+
+// FIRST LOAD animation
+setTimeout(() => {
+    if (contactBox) contactBox.classList.add("active");
+}, 300);
+
+/* ----- Tab Switching System ----- */
+if (contactTab && orderTab && contactForm && orderForm) {
+    contactTab.addEventListener("click", () => {
+        contactTab.classList.add("active");
+        orderTab.classList.remove("active");
+
+        contactForm.classList.add("active");
+        orderForm.classList.remove("active");
+
+        contactContainer?.classList.remove("active");
+
+        // Re-trigger animation
+        contactBox.classList.remove("active");
+        setTimeout(() => contactBox.classList.add("active"), 20);
+    });
+
+    orderTab.addEventListener("click", () => {
+        orderTab.classList.add("active");
+        contactTab.classList.remove("active");
+
+        orderForm.classList.add("active");
+        contactForm.classList.remove("active");
+
+        contactContainer?.classList.add("active");
+
+        // Re-trigger animation
+        contactBox.classList.remove("active");
+        setTimeout(() => contactBox.classList.add("active"), 20);
     });
 }
